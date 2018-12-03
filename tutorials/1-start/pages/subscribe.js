@@ -1,5 +1,8 @@
 import React from 'react';
 // other imports
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+
 class Subscribe extends React.Component {
   onSubmit = (e) => {
     // check if email is missing, return undefined
@@ -8,6 +11,19 @@ class Subscribe extends React.Component {
 render() {
     return (
       // form with input and button
+      <form onSubmit={this.onSubmit}>
+  <p>We will email you when a new tutorial is released:</p>
+  <TextField
+    type="email"
+    label="Your email"
+    style={styleTextField}
+    required
+  />
+  <p />
+  <Button variant="raised" color="primary" type="submit">
+    Subscribe
+  </Button>
+</form>
     );
   }
 }
